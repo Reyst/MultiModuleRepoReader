@@ -1,4 +1,4 @@
-package reyst.gsihome.research.repository.retrofit
+package reyst.gsihome.research.datasources.retrofit
 
 import retrofit2.Call
 import retrofit2.http.GET
