@@ -1,4 +1,4 @@
-package reyst.gsihome.research.repository.room
+package reyst.gsihome.research.datasources.room
 
 import androidx.room.Database
 import androidx.room.RoomDatabase

@@ -5,7 +5,7 @@ import dagger.Module
 import dagger.Provides
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import reyst.gsihome.research.repository.RemoteGitHubDataSource
+import reyst.gsihome.research.repository.core.RemoteGitHubDataSource
 import reyst.gsihome.research.repository.retrofit.Api
 import reyst.gsihome.research.repository.retrofit.RetrofitDataSource
 import javax.inject.Singleton
@@ -27,6 +27,6 @@ class RemoteDataSourceModule {
 
     @Singleton
     @Provides
-    fun provideRemoteDataSource(api: Api): RemoteGitHubDataSource = RetrofitDataSource(api)
+    fun provideRemoteDataSource(api: Api): reyst.gsihome.research.repository.core.RemoteGitHubDataSource = RetrofitDataSource(api)
 
 }

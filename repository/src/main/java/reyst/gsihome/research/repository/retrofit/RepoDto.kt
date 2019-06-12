@@ -1,7 +1,7 @@
 package reyst.gsihome.research.repository.retrofit
 
 import com.google.gson.annotations.SerializedName
-import reyst.gsihome.research.repository.IRepoDto
+import reyst.gsihome.research.repository.core.IRepoDto
 
 data class RepoDto(
 
@@ -14,4 +14,4 @@ data class RepoDto(
     @SerializedName("full_name")
     override val fullName: String
 
-): IRepoDto
+): reyst.gsihome.research.repository.core.IRepoDto

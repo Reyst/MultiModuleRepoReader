@@ -1,4 +1,4 @@
-package reyst.gsihome.research.repository.room
+package reyst.gsihome.research.datasources.room
 
 import androidx.room.Dao
 import androidx.room.Insert

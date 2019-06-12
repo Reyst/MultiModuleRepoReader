@@ -9,4 +9,7 @@ class ReaderApp: Application(), ApplicationProvider {
     val appComponent: AppComponent by lazy { AppComponent.Initializer.init(this) }
 
     override fun provideApplication(): Application = this
+
+    override fun provideLocalStorageName(): String = "github_repos_db"
+
 }
