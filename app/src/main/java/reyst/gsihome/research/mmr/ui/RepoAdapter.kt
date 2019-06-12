@@ -5,12 +5,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import reyst.gsihome.research.mmr.R
 import reyst.gsihome.research.core.Repo
+import reyst.gsihome.research.mmr.R
 
 class RepoAdapter: RecyclerView.Adapter<RepoVH>() {
 
-    private val items: MutableList<reyst.gsihome.research.core.Repo> = mutableListOf()
+    private val items: MutableList<Repo> = mutableListOf()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RepoVH {
         val inflater = LayoutInflater.from(parent.context)
@@ -23,7 +23,7 @@ class RepoAdapter: RecyclerView.Adapter<RepoVH>() {
         holder.bind(items[position])
     }
 
-    fun update(list: List<reyst.gsihome.research.core.Repo>) {
+    fun update(list: List<Repo>) {
         items.clear()
         items.addAll(list)
         notifyDataSetChanged()
@@ -35,7 +35,7 @@ class RepoVH(itemView: View): RecyclerView.ViewHolder(itemView) {
     private val name = itemView.findViewById<TextView>(R.id.name)
     private val fullName = itemView.findViewById<TextView>(R.id.full_name)
 
-    fun bind(item: reyst.gsihome.research.core.Repo) {
+    fun bind(item: Repo) {
         name.text = item.name
         fullName.text = item.fullName
     }

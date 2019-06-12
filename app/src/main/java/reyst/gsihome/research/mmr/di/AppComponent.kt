@@ -36,7 +36,6 @@ interface AppComponent {
 
                 return DaggerAppComponent.builder()
                     .gitHubRepoRepositoryProvider(repoProvider)
-                    //.appModule(AppModule(app))
                     .build()
             }
         }

@@ -17,4 +17,4 @@ data class RepoDb(
     @ColumnInfo(name = "full_name")
     override val fullName: String
 
-): reyst.gsihome.research.repository.core.IRepoDto
+): IRepoDto
