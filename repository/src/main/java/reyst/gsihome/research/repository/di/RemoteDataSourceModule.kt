@@ -1,4 +1,4 @@
-package reyst.gsihome.research.mmr.di
+package reyst.gsihome.research.repository.di
 
 import com.google.gson.GsonBuilder
 import dagger.Module

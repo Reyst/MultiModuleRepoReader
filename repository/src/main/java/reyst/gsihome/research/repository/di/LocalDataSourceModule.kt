@@ -1,4 +1,4 @@
-package reyst.gsihome.research.mmr.di
+package reyst.gsihome.research.repository.di
 
 import android.app.Application
 import androidx.room.Room

@@ -2,8 +2,10 @@ package reyst.gsihome.research.repository
 
 import reyst.gsihome.research.core.GitHubRepoRepository
 import reyst.gsihome.research.core.Repo
+import javax.inject.Inject
 
-class DefaultGitHubRepoRepository(
+class DefaultGitHubRepoRepository
+@Inject constructor(
     private val remote: RemoteGitHubDataSource,
     private val local: LocalGitHubDataSource
 ) : GitHubRepoRepository {
