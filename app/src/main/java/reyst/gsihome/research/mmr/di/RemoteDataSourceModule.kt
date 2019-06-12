@@ -5,9 +5,9 @@ import dagger.Module
 import dagger.Provides
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import reyst.gsihome.research.mmr.data.RemoteGitHubDataSource
-import reyst.gsihome.research.mmr.data.retrofit.Api
-import reyst.gsihome.research.mmr.data.retrofit.RetrofitDataSource
+import reyst.gsihome.research.repository.RemoteGitHubDataSource
+import reyst.gsihome.research.repository.retrofit.Api
+import reyst.gsihome.research.repository.retrofit.RetrofitDataSource
 import javax.inject.Singleton
 
 @Module

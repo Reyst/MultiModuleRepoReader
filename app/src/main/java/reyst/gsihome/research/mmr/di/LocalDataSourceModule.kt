@@ -4,9 +4,9 @@ import android.app.Application
 import androidx.room.Room
 import dagger.Module
 import dagger.Provides
-import reyst.gsihome.research.mmr.data.LocalGitHubDataSource
-import reyst.gsihome.research.mmr.data.room.Database
-import reyst.gsihome.research.mmr.data.room.RoomDataSource
+import reyst.gsihome.research.repository.LocalGitHubDataSource
+import reyst.gsihome.research.repository.room.Database
+import reyst.gsihome.research.repository.room.RoomDataSource
 import javax.inject.Singleton
 
 @Module

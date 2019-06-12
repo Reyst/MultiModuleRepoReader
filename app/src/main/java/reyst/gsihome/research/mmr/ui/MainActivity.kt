@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import reyst.gsihome.research.mmr.R
 import reyst.gsihome.research.mmr.ReaderApp
-import reyst.gsihome.research.mmr.domain.Repo
+import reyst.gsihome.research.core.Repo
 import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {
@@ -45,7 +45,7 @@ class MainActivity : AppCompatActivity() {
 
         viewModel.repoList.observe(
             this,
-            Observer<List<Repo>> { adapter.update(it) }
+            Observer<List<reyst.gsihome.research.core.Repo>> { adapter.update(it) }
         )
     }
 }

@@ -7,8 +7,8 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
-import reyst.gsihome.research.mmr.domain.GitHubRepoRepository
-import reyst.gsihome.research.mmr.domain.Repo
+import reyst.gsihome.research.core.GitHubRepoRepository
+import reyst.gsihome.research.core.Repo
 import javax.inject.Inject
 
 class SearchResultViewModel @Inject constructor(

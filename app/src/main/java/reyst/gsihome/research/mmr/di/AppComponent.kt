@@ -4,10 +4,10 @@ import android.app.Application
 import dagger.Component
 import dagger.Module
 import dagger.Provides
-import reyst.gsihome.research.mmr.data.DefaultGitHubRepoRepository
-import reyst.gsihome.research.mmr.data.LocalGitHubDataSource
-import reyst.gsihome.research.mmr.data.RemoteGitHubDataSource
-import reyst.gsihome.research.mmr.domain.GitHubRepoRepository
+import reyst.gsihome.research.repository.DefaultGitHubRepoRepository
+import reyst.gsihome.research.repository.LocalGitHubDataSource
+import reyst.gsihome.research.repository.RemoteGitHubDataSource
+import reyst.gsihome.research.core.GitHubRepoRepository
 import reyst.gsihome.research.mmr.ui.MainActivity
 import javax.inject.Singleton
 
