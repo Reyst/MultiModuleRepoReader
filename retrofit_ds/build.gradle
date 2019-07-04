@@ -28,14 +28,14 @@ dependencies {
 
     implementation 'androidx.appcompat:appcompat:1.0.2'
     testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test:runner:1.2.0'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+//    androidTestImplementation 'androidx.test:runner:1.2.0'
+//    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
     implementation "androidx.core:core-ktx:1.0.2"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
 
     implementation "com.google.dagger:dagger-android:$dagger"
-    implementation "com.google.dagger:dagger-android-support:$dagger" // if you use the support libraries
+//    implementation "com.google.dagger:dagger-android-support:$dagger" // if you use the support libraries
     kapt "com.google.dagger:dagger-android-processor:$dagger"
     kapt "com.google.dagger:dagger-compiler:$dagger"
 

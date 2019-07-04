@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity() {
             .appComponent
             .inject(this)
 
-        btn.setOnClickListener { viewModel.searchRepos(etName.text.toString()) }
+        btn.setOnClickListener { viewModel.searchRepos1(etName.text.toString()) }
 
         list.adapter = adapter
         list.layoutManager = LinearLayoutManager(this)
