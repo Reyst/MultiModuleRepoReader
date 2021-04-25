@@ -5,7 +5,6 @@ import android.widget.Button
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import reyst.gsihome.research.mmr.R
 import reyst.gsihome.research.mmr.ReaderApp
@@ -33,11 +32,15 @@ class MainActivity : AppCompatActivity() {
             .appComponent
             .inject(this)
 
-        btn.setOnClickListener { viewModel.searchRepos1(etName.text.toString()) }
+        btn.setOnClickListener { updateList() }
 
         list.adapter = adapter
-        list.layoutManager = LinearLayoutManager(this)
 
-        viewModel.repoList.observe(this, adapter::update)
+//        viewModel.repoList.observe(this, adapter::update)
+    }
+
+    private fun updateList() {
+        viewModel.searchRepos1(etName.text.toString())
+            .observe(this, adapter::update)
     }
 }

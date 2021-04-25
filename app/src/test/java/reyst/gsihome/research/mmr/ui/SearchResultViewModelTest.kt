@@ -1,20 +1,21 @@
 package reyst.gsihome.research.mmr.ui
 
+import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.Observer
 import com.nhaarman.mockitokotlin2.any
 import com.nhaarman.mockitokotlin2.doReturn
 import com.nhaarman.mockitokotlin2.mock
-import kotlinx.coroutines.runBlocking
-import reyst.gsihome.research.core.GitHubRepoRepository
-import reyst.gsihome.research.core.Repo
-import reyst.gsihome.research.repository.GitHubRepo
-import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.flow.flowOf
+import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.test.TestCoroutineDispatcher
 import kotlinx.coroutines.test.resetMain
 import kotlinx.coroutines.test.setMain
 import org.junit.*
+import reyst.gsihome.research.core.GitHubRepoRepository
+import reyst.gsihome.research.core.Repo
+import reyst.gsihome.research.repository.GitHubRepo
 
 @ExperimentalCoroutinesApi
 class SearchResultViewModelTest {
@@ -45,7 +46,7 @@ class SearchResultViewModelTest {
             GitHubRepo(2, "Repo 2", "Repository 2")
         )
 
-        val repository = mock<GitHubRepoRepository> { on { getRepoListByUsername(any()) } doReturn response }
+        val repository = mock<GitHubRepoRepository> { onBlocking { getUserRepositories(any()) } doReturn flowOf(response) }
 
         val observer = Observer<List<Repo>> {
             Assert.assertEquals(2, it.size)
@@ -53,10 +54,7 @@ class SearchResultViewModelTest {
         }
 
         val vm = SearchResultViewModel(repository)
-
-        vm.repoList.observeForever(observer)
-
-        vm.searchRepos1("test")
+        vm.searchRepos1("test").observeForever(observer)
     }
 
     @Test

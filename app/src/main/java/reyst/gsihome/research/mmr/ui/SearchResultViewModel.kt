@@ -1,10 +1,9 @@
 package reyst.gsihome.research.mmr.ui
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.*
 import kotlinx.coroutines.*
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.collect
 import reyst.gsihome.research.core.GitHubRepoRepository
 import reyst.gsihome.research.core.Repo
 import javax.inject.Inject
@@ -18,11 +17,9 @@ class SearchResultViewModel @Inject constructor(
     val repoList: LiveData<List<Repo>>
     get() = _repoList
 
-    fun searchRepos1(name: String) {
-        viewModelScope.launch(Dispatchers.IO) {
-            val data = repository.getRepoListByUsername(name)
-            _repoList.postValue(data)
-        }
+    fun searchRepos1(name: String) = liveData {
+        repository.getUserRepositories(name)
+            .collect { emit(it) }
     }
 
     fun searchRepos2(name: String) {
