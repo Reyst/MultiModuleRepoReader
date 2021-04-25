@@ -1,9 +1,9 @@
 package reyst.gsihome.research.mmr.ui
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
@@ -11,7 +11,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import reyst.gsihome.research.mmr.R
 import reyst.gsihome.research.mmr.ReaderApp
-import reyst.gsihome.research.mmr.domain.Repo
 import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {
@@ -38,14 +37,14 @@ class MainActivity : AppCompatActivity() {
             .appComponent
             .inject(this)
 
-        btn.setOnClickListener { viewModel.searchRepos(etName.text.toString()) }
+        btn.setOnClickListener { viewModel.searchRepos1(etName.text.toString()) }
 
         list.adapter = adapter
         list.layoutManager = LinearLayoutManager(this)
 
         viewModel.repoList.observe(
             this,
-            Observer<List<Repo>> { adapter.update(it) }
+            Observer<List<reyst.gsihome.research.core.Repo>> { adapter.update(it) }
         )
     }
 }
